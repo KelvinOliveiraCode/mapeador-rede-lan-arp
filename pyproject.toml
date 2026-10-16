@@ -1,0 +1,25 @@
+[project]
+name = "mapeador-rede-lan-arp"
+version = "0.1.0"
+description = "Descoberta de hosts LAN via varredura ARP; monta topologia com IP e MAC."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "scapy>=2.5.0",
+]
+
+[project.scripts]
+mapeador-rede-lan-arp = "mapeador_rede_lan_arp.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
