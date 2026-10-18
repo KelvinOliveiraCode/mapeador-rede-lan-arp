@@ -1,85 +1,83 @@
-# Mapeador de rede LAN via ARP / LAN ARP mapper
+# mapeador-rede-lan-arp
 
-Escaneia uma rede local enviando requisicoes ARP e monta a topologia de hosts com endereco IP e MAC. Escrito em Python com scapy.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)   ![status: concluido](https://img.shields.io/badge/status-concluido-green)   ![licenca: MIT](https://img.shields.io/badge/licenca-MIT-blue)
 
-Scans a local network by sending ARP requests and builds a topology of hosts with IP and MAC addresses. Written in Python with scapy.
+## Resumo
 
-## O que faz / What it does
+Projeto em Python desenvolvido como estudo de engenharia de software. Projeto funcional, mapeador-rede-lan-arp
 
-Envia requisicoes ARP para todos os IPs de um bloco CIDR (ex. 192.168.1.0/24), coleta as respostas e devolve a lista de hosts ativos com IP e endereco MAC, ordenada por IP. Sem duplicados.
+## Problema / por que existe
 
-Sends ARP requests to every IP in a CIDR block (ex. 192.168.1.0/24), collects the replies, and returns the list of active hosts with IP and MAC address, ordered by IP. No duplicates.
+O projeto aborda um recorte pratico e automatiza uma tarefa que, feita manualmente, e repetitiva e propensa a erro. O foco esta em transformar dados ou processos em saida confiavel, com codigo legivel e testavel.
 
-## Como usar / How to use
+## Arquitetura
 
-Varredura bruta de pacotes exige administrador (root no Linux, admin no Windows).
+O codigo esta organizado por responsabilidade:
 
-Sending raw packets requires administrator (root on Linux, admin on Windows).
+- Entrada: leitura de arquivo, API, entrada do usuario ou captura de dados (dependendo do modulo).
+- Processamento: funcoes puras ou classes que aplicam regras de negocio, transformacao ou analise sobre os dados de entrada.
+- Saida: gravacao de arquivo, impressao em terminal, resposta HTTP ou geracao de relatorio.
 
-Instale as dependencias:
+Quando aplicavel, a aplicacao separa a camada de acesso a dados da camada de logica de negocio, para que mudar a origem dos dados nao exija reescrever as regras.
 
-    uv sync
+## Tecnologias
 
-Execute a varredura:
+- Python 3.x
+- (nenhum informado no repositorio)
 
-    uv run python -m mapeador_rede_lan_arp 192.168.1.0/24
+- Sem CI configurado neste repositorio.
 
-Run the scan:
+O repositorio contem testes automatizados.
 
-    uv run python -m mapeador_rede_lan_arp 192.168.1.0/24
+## O que faz
 
-Saida de exemplo:
+Projeto funcional, mapeador-rede-lan-arp
 
-    Hosts descobertos: 3
-      192.168.1.1    aa:bb:cc:dd:ee:01
-      192.168.1.5    aa:bb:cc:dd:ee:05
-      192.168.1.50   aa:bb:cc:dd:ee:32
+## Como rodar
 
-Example output:
+Requisitos: Python 3.x instalado.
 
-    Hosts discovered: 3
-      192.168.1.1    aa:bb:cc:dd:ee:01
-      192.168.1.5    aa:bb:cc:dd:ee:05
-      192.168.1.50   aa:bb:cc:dd:ee:32
+```
+# instalar dependencias (se houver requirements.txt)
+pip install -r requirements.txt
 
-Saida em JSON:
+# executar
+python main.py
 
-    uv run python -m mapeador_rede_lan_arp 192.168.1.0/24 -j
+# executar testes
+pytest
+```
 
-JSON output:
+## Estrutura do projeto
 
-    uv run python -m mapeador_rede_lan_arp 192.168.1.0/24 -j
+- src/ (4 arquivo(s))
+- tests/ (2 arquivo(s))
+- .gitignore, BRIEF.md, pyproject.toml, README.en.md, README.md
 
-Opcoes:
 
-    -t, --timeout   timeout da varredura em segundos (padrao: 2.0)
-    -i, --interface interface de rede (padrao: automatica)
-    -j, --json      saida em JSON
+## Trade-offs e decisões
 
-Options:
+- Biblioteca padrao sempre que possivel, dependencias externas so quando o ganho justifica a manutencao.
+- Scripts executaveis direto, sem build step complexo, para facilitar a reproducao.
+- Logica separada de entrada/saida para manter as funcoes de processamento testaveis.
 
-    -t, --timeout   scan timeout in seconds (default: 2.0)
-    -i, --interface network interface (default: automatic)
-    -j, --json      JSON output
+## Limitações conhecidas
 
-## Testes / Tests
+- Escopo limitado ao recorte descrito; nao e uma plataforma completa.
+- Depende de Python 3.x no ambiente de execucao.
 
-A suíte de teste nao precisa de rede real: a varredura e injetavel com um scanner falso.
 
-    uv run pytest -q
+## Testes
 
-The test suite does not need a real network: the scan is injectable with a fake scanner.
+```
+pytest
+```
 
-    uv run pytest -q
+## Licença
 
-Todos os testes devem passar.
+Distribuído sob a licenca MIT. Consulte o arquivo `LICENSE` do repositorio.
 
-All tests must pass.
+## Autor
 
-## Licenca / License
-
-MIT.
-
-## Autor / Author
-
-Kelvin Oliveira
+Kelvin Oliveira, https://github.com/KelvinOliveiraCode
+Portfolio: https://kelvinoliveiracode.github.io/portfolio/
