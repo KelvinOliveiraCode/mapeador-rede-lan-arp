@@ -14,10 +14,10 @@ An educational lab, working and tested (10 tests).
 
 ## Features
 
-- **ARP scan** (`scanner.py`): `scan_network(cidr)` — sends ARP Request packets to every address in the range and collects responses (IP + MAC).
+- **ARP scan** (`scanner.py`): `scan_network(cidr)`, sends ARP Request packets to every address in the range and collects responses (IP + MAC).
 - **Topology** (`topology.py`): `Host` (IP, MAC, timestamp) with IP ordering.
-- **Output**: list of discovered hosts with IP, MAC and timestamp.
-- **CLI**: `mapeador-rede-lan-arp <CIDR>`.
+- Output: list of discovered hosts with IP, MAC and timestamp.
+- CLI: `mapeador-rede-lan-arp <CIDR>`.
 
 ## Stack
 
@@ -27,7 +27,7 @@ An educational lab, working and tested (10 tests).
 
 ## Repository layout
 
-```
+```text
 mapeador-rede-lan-arp/
 ├── pyproject.toml · BRIEF.md
 ├── src/mapeador_rede_lan_arp/
@@ -74,4 +74,4 @@ An individual project by Kelvin Oliveira, built with orchestrated AI agents and 
 
 ## License and author
 
-MIT — Copyright (c) 2026 Kelvin Rebelo de Oliveira. Author: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)
+MIT. Copyright (c) 2026 Kelvin Rebelo de Oliveira. Author: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfolio](https://kelvinoliveiracode.github.io/portfolio/)

@@ -14,10 +14,10 @@ Laboratório educacional funcional e testado (10 testes).
 
 ## Funcionalidades
 
-- **Varredura ARP** (`scanner.py`): `scan_network(cidr)` — envia pacotes ARP Request para todos os endereços da faixa e coleta as respostas (IP + MAC).
+- **Varredura ARP** (`scanner.py`): `scan_network(cidr)`, envia pacotes ARP Request para todos os endereços da faixa e coleta as respostas (IP + MAC).
 - **Topologia** (`topology.py`): `Host` (IP, MAC, timestamp) com ordenação por IP.
-- **Saída**: lista de hosts descobertos com IP, MAC e instante.
-- **CLI**: `mapeador-rede-lan-arp <CIDR>`.
+- Saída: lista de hosts descobertos com IP, MAC e instante.
+- CLI: `mapeador-rede-lan-arp <CIDR>`.
 
 ## Stack
 
@@ -27,7 +27,7 @@ Laboratório educacional funcional e testado (10 testes).
 
 ## Estrutura do repositório
 
-```
+```text
 mapeador-rede-lan-arp/
 ├── pyproject.toml · BRIEF.md
 ├── src/mapeador_rede_lan_arp/
@@ -74,4 +74,4 @@ Projeto individual de Kelvin Oliveira, construído com agentes de IA orquestrado
 
 ## Licença e autor
 
-MIT — Copyright (c) 2026 Kelvin Rebelo de Oliveira. Autor: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfólio](https://kelvinoliveiracode.github.io/portfolio/)
+MIT. Copyright (c) 2026 Kelvin Rebelo de Oliveira. Autor: [Kelvin Oliveira](https://github.com/KelvinOliveiraCode) · [Portfólio](https://kelvinoliveiracode.github.io/portfolio/)
